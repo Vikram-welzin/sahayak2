@@ -8,7 +8,7 @@ const creditScoreScheduler = require('./services/creditScoreScheduler');
 // 🟡 Fluentd logger setup
 const fluent = require('fluent-logger');
 fluent.configure('website.logs', {
-  host: 'localhost',
+  host: process.env.FLUENTD_HOST || 'localhost',
   port: 24224,
 });
 
